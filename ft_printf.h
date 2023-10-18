@@ -6,5 +6,6 @@
 
 int	ft_printf(const char *str, ...);	
 int ft_print_char(int c);
+int	ft_print_string(const char *src);
 
 #endif

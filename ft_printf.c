@@ -7,6 +7,8 @@ static int	ft_select_format(va_list args, const char format)
 	count = 0;
 	if (format == 'c')
 		count += ft_print_char(va_arg(args, int));
+	if (format == 's')
+		count += ft_print_string(va_arg(args, char *));
 	return (count);
 }
 

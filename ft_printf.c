@@ -10,7 +10,7 @@ static int	ft_select_format(va_list args, const char format)
 	if (format == 's')
 		count += ft_print_string(va_arg(args, char *));
     if (format == 'x')
-        count += ft_print_hex(va_arg(args, unsigned long));
+        count += ft_print_hex(va_arg(args, unsigned int));
 //	if (format == 'p')
 //		count += ft_print_pointer(va_arg(args, unsigned long));
 	return (count);

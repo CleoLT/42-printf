@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 #include "ft_printf.h"
 
 int	main(void)
@@ -32,7 +33,9 @@ printf("%d\n", ft_printf("%x mi argumento es 186 en decimal  ", 186));
     printf("%d\n", printf("%x mi argumento es 0 en decimal  ", 0));
     printf("%d\n", ft_printf("%x mi argumento es 16 en decimal  ", 16));
     printf("%d\n", printf("%x mi argumento es 16 en decimal  ", 16));
+	printf("%d\n", ft_printf("%x mi argumento es UINT_MAX en decimal  ", UINT_MAX));	
+	printf("%d\n", printf("%x mi argumento es UINT_MAX en decimal  ", UINT_MAX));
 
- 
+
 	return (0);
 }

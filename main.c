@@ -19,7 +19,7 @@ int	main(void)
 	ft_printf("string\n");
 	printf("%d\n", ft_printf("%s mi argumento es string", "string\0string"));
     printf("%d\n", printf("%s mi argumento es string", "string\0string"));
-    printf("%d\n", printf("%s mi argumento es NULL", NULL));
+//	printf("%d\n", printf("%s mi argumento es NULL", NULL));
 	printf("%d\n", ft_printf("%s mi argumento es NULL", NULL));
 
 	printf("\nhexadecimal\n");
@@ -38,8 +38,12 @@ int	main(void)
 	void *pt = "holis";
 	printf("%d\n", ft_printf("mi puntero es %p  ", pt));
     printf("%d\n", printf("mi puntero es %p  ", pt));
-	printf("mi puntero en decimal es %lu\n", (unsigned long)pt);
-	printf("conversion al hexadecimal %lx\n", (unsigned long)pt);
+    printf("%d\n", ft_printf("mi puntero es %p  ", NULL));
+    printf("%d\n", printf("mi puntero es %p  ", NULL));
+
+
+	printf("mi puntero en decimal es %lu\n", (unsigned long int)pt);
+	printf("conversion al hexadecimal %lx\n", (unsigned long int)pt);
 
 	printf("\nrandom\n");
 //	printf("%d\n", ft_printf("Holiii %f", "df"));	

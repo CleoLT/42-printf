@@ -12,6 +12,7 @@
 #ifndef FT_PRINTF_H
 # include <unistd.h>
 # include <stdarg.h>
+# include <limits.h>
 # include "./libft/libft.h"
 # define FT_PRINTF_H
 
@@ -20,5 +21,6 @@ int	ft_print_char(int c);
 int	ft_print_string(const char *src);
 int	ft_print_hex(unsigned int num);
 int	ft_print_pointer(unsigned long address);
+int	ft_print_int(int nb);
 
 #endif

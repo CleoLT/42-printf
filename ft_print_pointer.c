@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
-int ft_long_hex(unsigned long num)
+
+static int ft_long_hex(unsigned long num)
 {
     int     count;
     char    hex;
@@ -25,7 +26,6 @@ int ft_long_hex(unsigned long num)
     write(1, &hex, 1);
     return (count);
 }
-
 
 int	ft_print_pointer(unsigned long address)
 {

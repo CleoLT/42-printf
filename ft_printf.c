@@ -24,6 +24,8 @@ static int	ft_select_format(va_list args, const char format)
 		count += ft_print_hex(va_arg(args, unsigned int));
 	if (format == 'p')
 		count += ft_print_pointer(va_arg(args, unsigned long));
+	if (format == 'd')
+		count += ft_print_int(va_arg(args, int));
 	return (count);
 }
 

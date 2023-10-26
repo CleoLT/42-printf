@@ -6,7 +6,7 @@
 /*   By: ale-tron <ale-tron@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:56:01 by ale-tron          #+#    #+#             */
-/*   Updated: 2023/10/26 11:56:31 by ale-tron         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:51:54 by ale-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
@@ -19,5 +19,6 @@ int	ft_printf(const char *str, ...);
 int	ft_print_char(int c);
 int	ft_print_string(const char *src);
 int	ft_print_hex(unsigned int num);
+int	ft_print_pointer(unsigned long address);
 
 #endif

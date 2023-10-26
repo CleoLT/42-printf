@@ -34,6 +34,12 @@ int	main(void)
 	printf("%d\n", ft_printf("%x mi argumento es UINT_MAX en decimal  ", UINT_MAX));
 	printf("%d\n", printf("%x mi argumento es UINT_MAX en decimal  ", UINT_MAX));
 
+	printf("\nHEXADECIMAL\n");
+    printf("%d\n", ft_printf("%X mi argumento es 186 en decimal  ", 186));
+    printf("%d\n", printf("%X mi argumento es 186 en decimal  ", 186));
+    printf("%d\n", ft_printf("%X mi argumento es 456123 en decimal  ", 456123));
+    printf("%d\n", printf("%X mi argumento es 456123 en decimal  ", 456123));
+
 	printf("\npointer\n");
 	void *pt = "holis";
 	printf("%d\n", ft_printf("mi puntero es %p  ", pt));
@@ -53,6 +59,24 @@ int	main(void)
     printf("%d\n", printf("%d mi argumento es INT_MIN en decimal  ", INT_MIN));  
 	printf("%d\n", ft_printf("%d mi argumento es -2147483 en decimal  ", -2147483));
     printf("%d\n", printf("%d mi argumento es -2147483 en decimal  ", -2147483));
+
+printf("\n%%i\n");
+    printf("%d\n", ft_printf("%i mi argumento es 0 en decimal  ", 0));
+    printf("%d\n", printf("%i mi argumento es 0 en decimal  ", 0));
+    printf("%d\n", ft_printf("%i mi argumento es INT_MAX en decimal  ", INT_MAX));
+    printf("%d\n", printf("%i mi argumento es INT_MAX en decimal  ", INT_MAX));  
+    printf("%d\n", ft_printf("%i mi argumento es INT_MIN en decimal  ", INT_MIN));
+    printf("%d\n", printf("%i mi argumento es INT_MIN en decimal  ", INT_MIN));
+    printf("%d\n", ft_printf("%i mi argumento es -2147483 en decimal  ", -2147483));
+    printf("%d\n", printf("%i mi argumento es -2147483 en decimal  ", -2147483));
+
+printf("\nunsigned\n");
+    printf("%d\n", ft_printf("%u mi argumento es 0 en decimal  ", 0));
+    printf("%d\n", printf("%u mi argumento es 0 en decimal  ", 0));
+    printf("%d\n", ft_printf("%u mi argumento es UINT_MAX en decimal  ", INT_MAX));
+    printf("%d\n", printf("%u mi argumento es UINT_MAX en decimal  ", INT_MAX));
+    printf("%d\n", ft_printf("%u mi argumento es 2147483 en decimal  ", 2147483));
+    printf("%d\n", printf("%u mi argumento es 2147483 en decimal  ", 2147483));
 
 
 	printf("\nrandom\n");

@@ -19,8 +19,9 @@
 int	ft_printf(const char *str, ...);	
 int	ft_print_char(int c);
 int	ft_print_string(const char *src);
-int	ft_print_hex(unsigned int num);
+int	ft_print_hex(unsigned int num, const char format);
 int	ft_print_pointer(unsigned long address);
 int	ft_print_int(int nb);
+int	ft_print_unsigned(unsigned int nb);
 
 #endif

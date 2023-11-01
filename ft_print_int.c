@@ -1,7 +1,17 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ale-tron <ale-tron@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/01 17:39:21 by ale-tron          #+#    #+#             */
+/*   Updated: 2023/11/01 17:40:28 by ale-tron         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "ft_printf.h"
 
-int ft_print_int(int nb)
+int	ft_print_int(int nb)
 {
 	int		count;
 	char	temp;
@@ -25,4 +35,4 @@ int ft_print_int(int nb)
 	temp = nb % 10 + '0';
 	write(1, &temp, 1);
 	return (count);
-}	
+}

@@ -59,6 +59,8 @@ int	main(void)
     printf("%d\n", printf("%d mi argumento es INT_MIN en decimal  ", INT_MIN));  
 	printf("%d\n", ft_printf("%d mi argumento es -2147483 en decimal  ", -2147483));
     printf("%d\n", printf("%d mi argumento es -2147483 en decimal  ", -2147483));
+	printf("%d\n", ft_printf("%d mi argumento es -10 en decimal  ", -10));
+    printf("%d\n", printf("%d mi argumento es -10 en decimal  ", -10));
 
 printf("\n%%i\n");
     printf("%d\n", ft_printf("%i mi argumento es 0 en decimal  ", 0));

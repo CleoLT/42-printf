@@ -18,7 +18,7 @@ int ft_print_int(int nb)
 		write(1, "-", 1);
 		count += 1;
 	}
-	if (nb > 10)
+	if (nb >= 10)
 	{
 		count += ft_print_int(nb / 10);
 	}

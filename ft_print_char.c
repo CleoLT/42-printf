@@ -6,13 +6,14 @@
 /*   By: ale-tron <ale-tron@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:51:10 by ale-tron          #+#    #+#             */
-/*   Updated: 2023/10/26 11:51:18 by ale-tron         ###   ########.fr       */
+/*   Updated: 2023/11/01 18:06:45 by ale-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
 int	ft_print_char(int c)
 {
-	write(1, &c, 1);
+	if (write(1, &c, 1) == -1)
+		return (-1);
 	return (1);
 }

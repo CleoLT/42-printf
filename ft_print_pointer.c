@@ -6,7 +6,7 @@
 /*   By: ale-tron <ale-tron@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:52:49 by ale-tron          #+#    #+#             */
-/*   Updated: 2023/11/01 17:43:35 by ale-tron         ###   ########.fr       */
+/*   Updated: 2023/11/01 20:00:17 by ale-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -23,7 +23,8 @@ static int	ft_long_hex(unsigned long num)
 		hex = num % 16 - 10 + 'a';
 	if (num % 16 < 10)
 		hex = num % 16 + '0';
-	write(1, &hex, 1);
+	if (write(1, &hex, 1) == -1)
+		return (-1);
 	return (count);
 }
 
@@ -33,10 +34,12 @@ int	ft_print_pointer(unsigned long address)
 
 	if (!address)
 	{
-		write(1, "0x0", 3);
+		if (write(1, "0x0", 3) == -1)
+			return (-1);
 		return (3);
 	}
-	write(1, "0x", 2);
+	if (write(1, "0x", 2) == -1)
+		return (-1);
 	count = 2;
 	count += ft_long_hex(address);
 	return (count);

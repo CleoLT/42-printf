@@ -6,7 +6,7 @@
 /*   By: ale-tron <ale-tron@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:54:06 by ale-tron          #+#    #+#             */
-/*   Updated: 2023/10/26 12:50:51 by ale-tron         ###   ########.fr       */
+/*   Updated: 2023/11/01 19:34:09 by ale-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -16,6 +16,8 @@ static int	ft_select_format(va_list args, const char format)
 	int	count;
 
 	count = 0;
+	if (format == '%')
+		count += ft_print_char('%');
 	if (format == 'c')
 		count += ft_print_char(va_arg(args, int));
 	if (format == 's')
@@ -36,6 +38,7 @@ int	ft_printf(const char *str, ...)
 	va_list	args;
 	int		i;
 	int		count;
+	int		error;
 
 	i = 0;
 	count = 0;
@@ -45,14 +48,19 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i ++;
-			if (ft_strchr("cspdiuxX", str[i]))
-				count += ft_select_format(args, str[i]);
-			else if (str[i] == '%')
-				count += ft_print_char('%');
+			if (ft_strchr("cspdiuxX%", str[i]))
+			{
+				error = ft_select_format(args, str[i]);
+				if (error == -1)
+					return (-1);
+				count += error;
+			}	
 		}
+		else if (ft_print_char(str[i]) == -1)
+			return (-1);
 		else
-			count += ft_print_char(str[i]);
-		i++;
+			count ++;
+	i++;
 	}
 	va_end(args);
 	return (count);

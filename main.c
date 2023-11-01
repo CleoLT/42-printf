@@ -86,5 +86,16 @@ printf("\nunsigned\n");
 //	printf("%d\n", printf("Holiii %f", "df"));
 ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
 printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+printf("%d", ft_printf("%s", (char *)NULL));
+printf("%d", printf("%s", (char *)NULL));
+printf("\n");
+printf("%d", ft_printf("%p", ""));
+printf("\n");
+printf("%d", printf("%p", ""));
+printf("\n");
+printf("%d", ft_printf("%p", NULL));
+printf("\n");
+printf("%d", printf("%p", NULL));
+
 	return (0);
 }

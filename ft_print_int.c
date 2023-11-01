@@ -6,7 +6,7 @@
 /*   By: ale-tron <ale-tron@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:39:21 by ale-tron          #+#    #+#             */
-/*   Updated: 2023/11/01 17:40:28 by ale-tron         ###   ########.fr       */
+/*   Updated: 2023/11/01 20:12:11 by ale-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -19,13 +19,15 @@ int	ft_print_int(int nb)
 	count = 1;
 	if (nb == INT_MIN)
 	{
-		write(1, "-2147483648", 11);
+		if (write(1, "-2147483648", 11) == -1)
+			return (-1);
 		return (11);
 	}
 	if (nb < 0)
 	{
 		nb = -nb;
-		write(1, "-", 1);
+		if (write(1, "-", 1) == -1)
+			return (-1);
 		count += 1;
 	}
 	if (nb >= 10)
@@ -33,6 +35,7 @@ int	ft_print_int(int nb)
 		count += ft_print_int(nb / 10);
 	}
 	temp = nb % 10 + '0';
-	write(1, &temp, 1);
+	if (write(1, &temp, 1) == -1)
+		return (-1);
 	return (count);
 }

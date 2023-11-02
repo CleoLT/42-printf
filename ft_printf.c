@@ -6,7 +6,7 @@
 /*   By: ale-tron <ale-tron@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:54:06 by ale-tron          #+#    #+#             */
-/*   Updated: 2023/11/01 19:34:09 by ale-tron         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:24:23 by ale-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -36,31 +36,27 @@ static int	ft_select_format(va_list args, const char format)
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int		i;
 	int		count;
 	int		error;
 
-	i = 0;
 	count = 0;
 	va_start(args, str);
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] == '%')
+		if (*str == '%')
 		{
-			i ++;
-			if (ft_strchr("cspdiuxX%", str[i]))
+			if (ft_strchr("cspdiuxX%", *++str))
 			{
-				error = ft_select_format(args, str[i]);
+				error = ft_select_format(args, *str++);
 				if (error == -1)
 					return (-1);
 				count += error;
-			}	
+			}
 		}
-		else if (ft_print_char(str[i]) == -1)
+		else if (ft_print_char(*str++) == -1)
 			return (-1);
 		else
-			count ++;
-	i++;
+			count++;
 	}
 	va_end(args);
 	return (count);

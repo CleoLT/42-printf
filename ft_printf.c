@@ -6,7 +6,7 @@
 /*   By: ale-tron <ale-tron@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:54:06 by ale-tron          #+#    #+#             */
-/*   Updated: 2023/11/02 14:24:23 by ale-tron         ###   ########.fr       */
+/*   Updated: 2023/11/03 10:01:45 by ale-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -37,7 +37,7 @@ int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		count;
-	int		error;
+	int		strarg;
 
 	count = 0;
 	va_start(args, str);
@@ -47,10 +47,10 @@ int	ft_printf(const char *str, ...)
 		{
 			if (ft_strchr("cspdiuxX%", *++str))
 			{
-				error = ft_select_format(args, *str++);
-				if (error == -1)
+				strarg = ft_select_format(args, *str++);
+				if (strarg == -1)
 					return (-1);
-				count += error;
+				count += strarg;
 			}
 		}
 		else if (ft_print_char(*str++) == -1)

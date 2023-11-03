@@ -6,7 +6,7 @@
 /*   By: ale-tron <ale-tron@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:52:49 by ale-tron          #+#    #+#             */
-/*   Updated: 2023/11/03 08:09:08 by ale-tron         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:57:44 by ale-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -32,14 +32,11 @@ int	ft_print_pointer(unsigned long address)
 	int	count;
 
 	if (!address)
-	{
-		if (write(1, "0x0", 3) == -1)
-			return (-1);
-		return (3);
-	}
-	if (write(1, "0x", 2) == -1)
+		return (ft_print_string("0x0"));
+	if (ft_print_string("0x") == -1)
 		return (-1);
-	count = 2;
-	count += ft_long_hex(address);
-	return (count);
+	count = ft_long_hex(address);
+	if (count == -1)
+		return (-1);
+	return (count += 2);
 }
